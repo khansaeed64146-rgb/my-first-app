@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English Aasaan — Demo</title>
+<style>
+:root{--blue:#2563eb;--navy:#10234d;--sky:#eff6ff;--mint:#dcfce7;--ink:#172033;--muted:#64748b;--line:#e2e8f0;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f5f8ff;color:var(--ink)}
+header{background:linear-gradient(120deg,#1d4ed8,#6366f1);color:white;padding:22px max(18px,calc((100% - 1120px)/2));}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:12px;align-items:center}.logo{height:46px;width:46px;display:grid;place-items:center;border-radius:15px;background:#ffffff25;font-size:25px}.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;font-size:12px;opacity:.86}.pill{border:1px solid #ffffff66;border-radius:999px;padding:8px 12px;font-size:12px;white-space:nowrap}
+main{max-width:1120px;margin:22px auto;padding:0 16px}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:stretch}.hero-copy,.daily-card,.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 28px #1e40af0a}.eyebrow{color:var(--blue);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.09em}.hero h2{font-size:clamp(28px,4vw,43px);line-height:1.08;margin:12px 0}.hero h2 span{color:var(--blue)}.hero p{color:var(--muted);line-height:1.65;margin:0 0 18px}.button{border:0;background:var(--blue);color:white;border-radius:12px;padding:12px 16px;font-weight:750;cursor:pointer;font-size:14px}.button.secondary{background:var(--sky);color:var(--blue)}.button.ghost{background:#f1f5f9;color:#334155}.button:focus,button:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}.daily-card{background:linear-gradient(145deg,#eff6ff,#f0fdf4);display:flex;flex-direction:column;justify-content:space-between}.daily-card .big{font-size:32px;margin:10px 0}.translation{font-size:19px;font-weight:800}.translation-en{font-size:23px;color:#1d4ed8;font-weight:850;margin:8px 0}.small{font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{padding:15px;background:white;border:1px solid var(--line);border-radius:16px}.stat strong{display:block;font-size:23px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:18px}.sidebar{background:white;border:1px solid var(--line);border-radius:20px;padding:12px;height:max-content}.navbtn{width:100%;display:flex;align-items:center;gap:10px;text-align:left;padding:12px;border:0;background:transparent;border-radius:12px;font-size:14px;font-weight:700;color:#475569;cursor:pointer}.navbtn.active{background:var(--sky);color:var(--blue)}.navbtn span{width:25px;text-align:center}.panel{min-height:400px}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:18px}.panel h3{margin:0;font-size:22px}.panel-head p{margin:6px 0 0;color:var(--muted);font-size:13px}.tag{background:var(--mint);color:#166534;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.lesson{border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;background:#fff;transition:.15s}.lesson:hover{border-color:#93c5fd;transform:translateY(-1px)}.lesson .emoji{font-size:25px}.lesson h4{margin:10px 0 5px}.lesson p{font-size:13px;color:var(--muted);margin:0 0 12px}.arrow{color:var(--blue);font-weight:800;font-size:13px}
+.lesson-box{border:1px solid #bfdbfe;border-radius:18px;background:#f8fbff;padding:22px;text-align:center}.lesson-box .hindi{font-size:20px;font-weight:800}.lesson-box .english{font-size:27px;font-weight:900;color:#1d4ed8;margin:12px 0}.lesson-box .pron{color:var(--muted);font-size:13px}.controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.quiz-question{font-size:19px;font-weight:800;margin:20px 0}.answers{display:grid;gap:10px}.answer{padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:white;text-align:left;cursor:pointer;font-weight:650}.answer:hover{border-color:#60a5fa}.answer.correct{border-color:#22c55e;background:#f0fdf4}.answer.wrong{border-color:#ef4444;background:#fef2f2}.feedback{margin-top:14px;font-weight:700;min-height:24px}.progressbar{height:9px;background:#e2e8f0;border-radius:20px;overflow:hidden;margin:10px 0 18px}.progressbar div{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#34d399);transition:width .3s}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:25px 15px}
+.hidden{display:none!important}
+@media(max-width:760px){header{padding:16px}.pill{display:none}.hero{grid-template-columns:1fr}.hero-copy,.daily-card{padding:20px}.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}.navbtn{font-size:12px;padding:10px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:20px}.cards{grid-template-columns:1fr}.panel{padding:18px}.panel-head{align-items:center}}
+</style>
+</head>
+<body>
+<header><div class="top"><div class="brand"><div class="logo">📘</div><div><h1>English Aasaan</h1><p>Seekhein · Bolein · Aage Badhein</p></div></div><div class="pill">DEMO VERSION · FREE</div></div></header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow">Aapki English journey yahan se shuru</div><h2>English seekhna<br><span>ab hua aasaan.</span></h2><p>Roz ke simple lessons, Hindi se English translation aur chhote quizzes ke saath apni English par confidence badhayein.</p><button class="button" onclick="showPage('lessons')">Free mein seekhna shuru karein →</button></div>
+ <div class="daily-card"><div><div class="eyebrow">✨ Aaj ka sentence</div><div class="big">☕</div><div class="translation">Mujhe chai chahiye.</div><div class="translation-en">I want tea.</div><div class="small">Is sentence ko zor se bolkar practice karein.</div></div><div class="controls" style="justify-content:flex-start"><button class="button secondary" onclick="speak('I want tea.')">🔊 Suno</button><button class="button ghost" onclick="showPage('practice')">🎙️ Practice</button></div></div>
+</section>
+<section class="stats"><div class="stat"><strong id="statLessons">0</strong><span>Lessons complete</span></div><div class="stat"><strong id="statScore">0</strong><span>Quiz points</span></div><div class="stat"><strong id="statStreak">1 day</strong><span>Aaj ki learning</span></div></section>
+<div class="layout">
+ <nav class="sidebar" aria-label="Main navigation">
+  <button class="navbtn active" data-page="home" onclick="showPage('home')"><span>🏠</span> Home</button>
+  <button class="navbtn" data-page="lessons" onclick="showPage('lessons')"><span>📚</span> Lessons</button>
+  <button class="navbtn" data-page="vocab" onclick="showPage('vocab')"><span>🧠</span> Vocabulary</button>
+  <button class="navbtn" data-page="practice" onclick="showPage('practice')"><span>🎙️</span> Speaking practice</button>
+  <button class="navbtn" data-page="quiz" onclick="showPage('quiz')"><span>🎯</span> Quiz</button>
+  <button class="navbtn" data-page="progress" onclick="showPage('progress')"><span>📈</span> My progress</button>
+ </nav>
+ <section class="panel">
+  <div id="page-home" class="page">
+   <div class="panel-head"><div><h3>Namaste! 👋</h3><p>Chhote steps, badi progress. Aaj 5 minute practice karein.</p></div><span class="tag">BEGINNER</span></div>
+   <div class="cards">
+    <div class="lesson" onclick="showPage('lessons')"><div class="emoji">💬</div><h4>Daily sentences</h4><p>Rozmarra mein kaam aane wale English sentences.</p><div class="arrow">Lesson dekhein →</div></div>
+    <div class="lesson" onclick="showPage('vocab')"><div class="emoji">🧩</div><h4>Vocabulary builder</h4><p>Har din naye words aur unke meanings seekhein.</p><div class="arrow">Words seekhein →</div></div>
+    <div class="lesson" onclick="showPage('practice')"><div class="emoji">🎤</div><h4>Speak out loud</h4><p>English sentence bolne ki practice karein.</p><div class="arrow">Practice karein →</div></div>
+    <div class="lesson" onclick="showPage('quiz')"><div class="emoji">🏆</div><h4>Quick quiz</h4><p>Apni learning test karein aur points kamayein.</p><div class="arrow">Quiz shuru karein →</div></div>
+   </div>
+  </div>
+  <div id="page-lessons" class="page hidden"><div class="panel-head"><div><h3>Daily English lessons</h3><p>Sentence par tap karke seekhna shuru karein.</p></div><span class="tag">5 MIN</span></div><div class="cards" id="lessonCards"></div></div>
+  <div id="page-vocab" class="page hidden"><div class="panel-head"><div><h3>Vocabulary builder</h3><p>Common words ko yaad karne ke liye suno aur dohrao.</p></div><span class="tag">WORDS</span></div><div class="cards" id="vocabCards"></div></div>
+  <div id="page-lesson" class="page hidden"><div class="panel-head"><div><h3 id="lessonTitle">Lesson</h3><p>Hindi padhein, English suno aur repeat karein.</p></div><span class="tag">LESSON</span></div><div class="lesson-box"><div style="font-size:34px">💬</div><div class="hindi" id="lessonHindi"></div><div class="english" id="lessonEnglish"></div><div class="pron" id="lessonPron"></div><div class="controls"><button class="button secondary" onclick="speak(currentLesson.en)">🔊 English suno</button><button class="button" onclick="completeLesson()">✓ Lesson complete</button></div></div><div class="controls"><button class="button ghost" onclick="showPage('lessons')">← All lessons</button><button class="button ghost" onclick="showPage('quiz')">Quiz karein →</button></div></div>
+  <div id="page-practice" class="page hidden"><div class="panel-head"><div><h3>Speaking practice 🎙️</h3><p>Sentence ko awaaz mein bolkar practice karein.</p></div><span class="tag">SPEAK</span></div><div class="lesson-box"><div class="small">Is sentence ko English mein boliye</div><div class="hindi" style="margin-top:12px">मैं एक विद्यार्थी हूँ।</div><div class="english">I am a student.</div><div class="controls"><button class="button secondary" onclick="speak('I am a student.')">🔊 Pehle sunein</button><button class="button" onclick="startRecognition()">🎙️ Ab boliye</button></div><p id="speechStatus" class="feedback" aria-live="polite">Microphone practice ke liye browser permission maang sakta hai.</p><p class="small">Note: Speech recognition browser/device support par depend karta hai. Yeh demo automatic pronunciation scoring ka daawa nahi karta.</p></div></div>
+  <div id="page-quiz" class="page hidden"><div class="panel-head"><div><h3>Quick quiz 🎯</h3><p>Sahi English translation chunein.</p></div><span class="tag" id="quizCounter">1 / 5</span></div><div class="progressbar"><div id="quizProgress"></div></div><div class="quiz-question" id="quizQuestion"></div><div class="answers" id="quizAnswers"></div><div class="feedback" id="quizFeedback" aria-live="polite"></div><div class="controls" style="justify-content:flex-end"><button class="button" id="nextQuiz" onclick="nextQuestion()" disabled>Agla sawal →</button></div></div>
+  <div id="page-progress" class="page hidden"><div class="panel-head"><div><h3>Aapki progress 📈</h3><p>Har din thodi practice se farq padta hai.</p></div><span class="tag">MY LEARNING</span></div><div class="lesson-box"><div style="font-size:36px">🌱</div><div class="english" id="progressHeadline">Aaj shuru karein!</div><p id="progressText">Pehla lesson complete karke apni progress banayein.</p><div class="progressbar"><div id="overallProgress"></div></div><div class="small" id="progressDetail">0 of 5 lessons complete</div></div><div class="controls"><button class="button" onclick="showPage('lessons')">Continue learning →</button></div></div>
+ </section>
+</div>
+</main>
+<footer>English Aasaan Demo · Free prototype · Aapki progress is demo ke dauraan browser mein hi rahegi.</footer>
+<script>
+const lessons=[
+ {hi:"मुझे पानी चाहिए।",en:"I want water.",pron:"Ai want water.",title:"Asking for something"},
+ {hi:"आप कैसे हैं?",en:"How are you?",pron:"Hau aar yoo?",title:"Greeting someone"},
+ {hi:"मेरा नाम राहुल है।",en:"My name is Rahul.",pron:"Mai neim iz Rahul.",title:"Introducing yourself"},
+ {hi:"मुझे समझ नहीं आया।",en:"I did not understand.",pron:"Ai did not understand.",title:"Asking for help"},
+ {hi:"आपसे मिलकर अच्छा लगा।",en:"Nice to meet you.",pron:"Nais tu meet yoo.",title:"Meeting someone"}
+];
+const vocab=[
+ {word:"Water",meaning:"पानी",emoji:"💧",example:"I drink water."},
+ {word:"Friend",meaning:"दोस्त",emoji:"🧑‍🤝‍🧑",example:"He is my friend."},
+ {word:"Happy",meaning:"खुश",emoji:"😊",example:"I am happy."},
+ {word:"Learn",meaning:"सीखना",emoji:"📖",example:"I learn English."},
+ {word:"Beautiful",meaning:"सुंदर",emoji:"🌼",example:"It is beautiful."},
+ {word:"Help",meaning:"मदद",emoji:"🤝",example:"Please help me."}
+];
+const questions=[
+ {q:"'मुझे पानी चाहिए' ka sahi English kya hai?",opts:["I want water.","I drink a book.","I am water."],correct:0},
+ {q:"'धन्यवाद' ko English mein kya kehte hain?",opts:["Sorry","Thank you","Good night"],correct:1},
+ {q:"'मेरा नाम सीमा है' ka sahi translation?",opts:["Your name is Seema.","My name is Seema.","I name Seema."],correct:1},
+ {q:"'How are you?' ka matlab kya hai?",opts:["आप कहाँ हैं?","आपका नाम क्या है?","आप कैसे हैं?"],correct:2},
+ {q:"'मुझे मदद चाहिए' ka sahi English?",opts:["I need help.","I help need.","Need I happy."],correct:0}
+];
+let completed=new Set(),score=0,qi=0,answered=false,currentLesson=lessons[0];
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));let target=document.getElementById('page-'+name);if(target)target.classList.remove('hidden');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===name));if(name==='quiz')renderQuestion();if(name==='progress')renderProgress();window.scrollTo({top:document.querySelector('.layout').offsetTop-10,behavior:'smooth'});}
+function speak(text){if(!('speechSynthesis'in window)){alert('Aapke browser mein text-to-speech support nahi hai.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang='en-IN';u.rate=.86;speechSynthesis.speak(u)}
+function renderLessons(){document.getElementById('lessonCards').innerHTML=lessons.map((l,i)=>`<div class="lesson" onclick="openLesson(${i})"><div class="emoji">${completed.has(i)?'✅':'💬'}</div><h4>${l.title}</h4><p>${l.hi}</p><div class="arrow">${completed.has(i)?'Completed ✓':'Start lesson →'}</div></div>`).join('')}
+function renderVocab(){document.getElementById('vocabCards').innerHTML=vocab.map(v=>`<div class="lesson"><div class="emoji">${v.emoji}</div><h4>${v.word} — ${v.meaning}</h4><p>${v.example}</p><button class="button secondary" onclick="speak('${v.word}. ${v.example.replace(/'/g,"")}')">🔊 Suno</button></div>`).join('')}
+function openLesson(i){currentLesson=lessons[i];currentLesson.index=i;document.getElementById('lessonTitle').textContent=currentLesson.title;document.getElementById('lessonHindi').textContent=currentLesson.hi;document.getElementById('lessonEnglish').textContent=currentLesson.en;document.getElementById('lessonPron').textContent='Bolne mein madad: '+currentLesson.pron;showPage('lesson')}
+function completeLesson(){completed.add(currentLesson.index);updateStats();renderLessons();renderProgress();alert('Shabash! Lesson complete ho gaya. 🎉');showPage('lessons')}
+function renderQuestion(){answered=false;let q=questions[qi];document.getElementById('quizCounter').textContent=`${qi+1} / ${questions.length}`;document.getElementById('quizProgress').style.width=(qi/questions.length*100)+'%';document.getElementById('quizQuestion').textContent=q.q;document.getElementById('quizFeedback').textContent='';document.getElementById('nextQuiz').disabled=true;document.getElementById('nextQuiz').textContent=qi===questions.length-1?'Quiz dobara karein ↻':'Agla sawal →';document.getElementById('quizAnswers').innerHTML=q.opts.map((o,i)=>`<button class="answer" onclick="chooseAnswer(${i},this)">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}
+function chooseAnswer(i,el){if(answered)return;answered=true;let q=questions[qi];document.querySelectorAll('.answer').forEach((b,j)=>{if(j===q.correct)b.classList.add('correct')});if(i===q.correct){score+=10;document.getElementById('quizFeedback').textContent='Bilkul sahi! +10 points 🎉'}else{el.classList.add('wrong');document.getElementById('quizFeedback').textContent='Koi baat nahi — sahi jawab green mein hai. Aage badhein!'}document.getElementById('quizProgress').style.width=((qi+1)/questions.length*100)+'%';document.getElementById('nextQuiz').disabled=false;updateStats()}
+function nextQuestion(){if(qi===questions.length-1){qi=0;alert('Quiz complete! Aapke total points: '+score+' 🏆');}else qi++;renderQuestion()}
+function startRecognition(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;const status=document.getElementById('speechStatus');if(!SR){status.textContent='Is browser mein speech recognition supported nahi hai. Chrome mein try karein, ya sentence sun kar dohrayein.';return}const r=new SR();r.lang='en-IN';r.interimResults=false;r.onstart=()=>status.textContent='Sun rahe hain… English mein boliye!';r.onresult=e=>{let said=e.results[0][0].transcript;status.textContent='Aapne kaha: “'+said+'” — ab original sentence se compare karein.'};r.onerror=()=>status.textContent='Microphone nahi chal saka. Browser permission check karein.';r.onend=()=>{};r.start()}
+function updateStats(){document.getElementById('statLessons').textContent=completed.size;document.getElementById('statScore').textContent=score;document.getElementById('statStreak').textContent='1 day';renderProgress()}
+function renderProgress(){let n=completed.size;document.getElementById('progressHeadline').textContent=n===lessons.length?'Excellent work! 🎉':n?'Achhi progress!':'Aaj shuru karein!';document.getElementById('progressText').textContent=n===lessons.length?'Aapne saare demo lessons complete kar liye. Roz practice jaari rakhein.':`Aapne ${n} lesson complete kiye. Agla lesson karke progress badhayein.`;document.getElementById('overallProgress').style.width=(n/lessons.length*100)+'%';document.getElementById('progressDetail').textContent=`${n} of ${lessons.length} lessons complete · ${score} quiz points`}
+renderLessons();renderVocab();renderQuestion();updateStats();
+</script>
+</body>
+</html>
